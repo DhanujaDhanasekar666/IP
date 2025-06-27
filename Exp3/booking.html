@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Bus Booking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #8360c3, #2ebf91);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .ticket-box {
+            background: #ffffff10;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 26px;
+            color: #fff;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: none;
+            font-size: 14px;
+        }
+
+        .ticket-summary {
+            background: #fff;
+            color: #333;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .ticket-summary p {
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #00c9a7;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #00b594;
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket-box">
+        <h1>Passenger & Ticket Details</h1>
+
+        <div class="ticket-summary">
+            <p><strong>From:</strong> <span id="fromValue">---</span></p>
+            <p><strong>To:</strong> <span id="toValue">---</span></p>
+            <p><strong>Date:</strong> <span id="dateValue">---</span></p>
+            <p><strong>Fare:</strong> ₹599</p>
+        </div>
+
+        <form onsubmit="bookNow(event)">
+            <label for="name">Passenger Name:</label>
+            <input type="text" id="name" required placeholder="e.g., Priya Sharma">
+
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" required placeholder="e.g., priya@example.com">
+
+            <label for="seats">Number of Seats:</label>
+            <select id="seats" required>
+                <option value="">Select</option>
+                <option value="1">1 Seat</option>
+                <option value="2">2 Seats</option>
+                <option value="3">3 Seats</option>
+                <option value="4">4 Seats</option>
+            </select>
+
+            <button type="submit">Pay & Book</button>
+        </form>
+    </div>
+
+    <script>
+        // Display search values
+        document.getElementById("fromValue").innerText = sessionStorage.getItem("from") || "N/A";
+        document.getElementById("toValue").innerText = sessionStorage.getItem("to") || "N/A";
+        document.getElementById("dateValue").innerText = sessionStorage.getItem("date") || "N/A";
+
+        function bookNow(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const seats = document.getElementById('seats').value;
+
+            alert(`Booking Confirmed!\nName: ${name}\nEmail: ${email}\nSeats: ${seats}`);
+        }
+    </script>
+</body>
+</html>
