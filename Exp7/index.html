@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beauty Parlor Appointment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    .box {
+      background: white;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      width: 400px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #d63384;
+      margin-bottom: 25px;
+    }
+
+    input, select, button {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: #d63384;
+      box-shadow: 0 0 5px #ffc0cb;
+    }
+
+    button {
+      background-color: #d63384;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #c2185b;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      const today = new Date().toISOString().split("T")[0];
+      document.getElementById("date").setAttribute("min", today);
+    };
+  </script>
+</head>
+<body>
+  <div class="box">
+    <h2>💇 Book Appointment</h2>
+    <form action="book.php" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="phone" placeholder="Phone Number" required>
+      <select name="service" required>
+        <option value="">Choose a Service</option>
+        <option value="Haircut">Haircut</option>
+        <option value="Facial">Facial</option>
+        <option value="Makeup">Makeup</option>
+        <option value="Bridal Package">Bridal Package</option>
+      </select>
+      <input type="date" name="appointment_date" id="date" required>
+      <input type="time" name="appointment_time" required>
+      <button type="submit">Book Now</button>
+    </form>
+  </div>
+</body>
+</html>
