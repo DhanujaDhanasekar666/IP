@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      font-family: 'Poppins', sans-serif;
+      padding: 40px;
+      color: white;
+    }
+
+    .dashboard {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+
+    .dashboard h2 {
+      margin-bottom: 20px;
+    }
+
+    .booking-summary {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <h2>Welcome Back, User!</h2>
+    <p>Your booking has been confirmed. Here's a summary:</p>
+    <div class="booking-summary">
+      <p><strong>Hotel:</strong> DreamStay Grand</p>
+      <p><strong>Room Type:</strong> Suite</p>
+      <p><strong>Check-in:</strong> 2025-07-10</p>
+      <p><strong>Check-out:</strong> 2025-07-12</p>
+      <p><strong>Status:</strong> Confirmed</p>
+    </div>
+  </div>
+</body>
+</html>
