@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hospital Appointment</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Set minimum date to today
+    window.onload = function () {
+      let today = new Date().toISOString().split('T')[0];
+      document.getElementById("date").setAttribute("min", today);
+    };
+  </script>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Book Hospital Appointment</h2>
+    <form action="book.php" method="POST">
+      <input type="text" name="patient_name" placeholder="Patient Name" required>
+      <input type="text" name="phone" placeholder="Phone Number" required>
+      <select name="department" required>
+        <option value="">Select Department</option>
+        <option value="Cardiology">Cardiology</option>
+        <option value="Neurology">Neurology</option>
+        <option value="Orthopedics">Orthopedics</option>
+        <option value="Pediatrics">Pediatrics</option>
+      </select>
+      <input type="date" id="date" name="appointment_date" required>
+      <button type="submit">Book Appointment</button>
+    </form>
+  </div>
+</body>
+</html>
