@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Syne', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('BACKGROUND.png') no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.container {
+  background: linear-gradient(135deg, #1a1a2e, #3f0071);
+  border: 2px solid #ff4dd2;
+  padding: 40px 50px;
+  border-radius: 25px;
+  width: 400px;
+  box-shadow: 0 0 30px #ff4dd2, 0 0 60px #3a0ca3;
+  animation: glowIn 1s ease-out;
+}
+
+@keyframes glowIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+h1 {
+  font-size: 40px;
+  color: #ff4dd2;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px #ff4dd2;
+}
+
+.form-input {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.form-input input {
+  width: 100%;
+  height: 50px;
+  background: #2a2a4d;
+  border: 2px solid #ff4dd2;
+  border-radius: 30px;
+  padding: 0 20px 0 50px;
+  font-size: 16px;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.form-input input:focus {
+  outline: none;
+  border-color: #00e5ff;
+  box-shadow: 0 0 12px #00e5ff;
+}
+
+.form-input input::placeholder {
+  color: #ddd;
+}
+
+.form-input i {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #00e5ff;
+  font-size: 18px;
+}
+
+.btn {
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(135deg, #ff4dd2, #3a0ca3);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px #ff4dd2;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #3a0ca3, #ff1493);
+  transform: scale(1.03);
+  box-shadow: 0 0 25px #ff69b4, 0 0 40px #3a0ca3;
+}
